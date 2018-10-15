@@ -21,11 +21,6 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 		}
 		aux[i] = j;
 		list[j] = k;
-
-
 	}
-
-
-
 	return { list, aux };
 }
