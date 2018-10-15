@@ -7,9 +7,10 @@
 std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> list)
 {
 	int  j, k;
-	vector<int> aux(list.size());
-
-	for (int i = 1; i < list.size(); i++)
+	int listsize = list.size();
+	vector<int> aux(listsize);
+	
+	for (int i = 1; i < listsize; i++)
 	{
 		j = i;
 		k = list[i];

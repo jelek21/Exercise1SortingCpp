@@ -7,7 +7,7 @@ int Output::PrintIntVector(vector<int> V)
 		cout << V[i] << "    ";
 	}
 	cout << endl;
-	return 0
+	return 0;
 }
 
 int Output::PrintString(string S, bool Eline)
