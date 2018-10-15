@@ -3,7 +3,8 @@
 
 int Output::PrintIntVector(vector<int> V)
 {
-	for (int i = 0; i < V.size(); i++) {
+	int Vsize = V.size();
+	for (int i = 0; i < Vsize; i++) {
 		cout << V[i] << "    ";
 	}
 	cout << endl;
