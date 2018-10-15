@@ -9,7 +9,7 @@ std::vector<int> Input::AskIntVector()
 	vector<int> returnTable(length);
 	cout << "Please enter the " << length << "Integers" << endl;
 	for (int i = 0; i < length; i++) {
-		cout << "Integer " << i+1 << " of " << length;
+		cout << "Integer " << i+1 << " of " << length << endl;
 		cin >> Integer;
 		returnTable[i] = Integer;
 	}
