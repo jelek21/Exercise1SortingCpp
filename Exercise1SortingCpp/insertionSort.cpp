@@ -23,8 +23,8 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 			j--;
 
 		}
-		index[j] = i;
 
+		index[j] = i;
 		list[j] = k;
 	}
 	return { list, index };
