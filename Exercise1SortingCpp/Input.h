@@ -11,4 +11,7 @@ public:
 	* @return vector<int> the vector of integer of length n (inputed by the user).
 	*/
 	static vector<int> AskIntVector();
+
+private:
+	static int InputInt(int A);
 };

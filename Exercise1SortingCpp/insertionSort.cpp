@@ -1,6 +1,6 @@
-#include "insertionSort.h
+#include "insertionSort.h"
 
-//Insertion Sort Algorithm
+/* Insertion Sort Algorithm  */
 std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> list)
 {
 	int  j, k;
