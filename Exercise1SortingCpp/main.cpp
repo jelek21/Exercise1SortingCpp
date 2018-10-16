@@ -19,4 +19,7 @@ int main(){
 	a = Output::PrintIntVector(sorted);
 	a = Output::PrintString("The indexes vector is: ", true);
 	a = Output::PrintIntVector(indexes);
+	a = Output::PrintString("", true);
+	a = Output::PrintString("Please type any key to end", true);
+	cin >> a;
 }
