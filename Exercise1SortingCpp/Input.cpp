@@ -26,7 +26,6 @@ std::vector<int> Input::AskIntVector()
 
 int Input::InputInt() {
 	int Integer = 0;
-	cin >> Integer;
 	while (!(cin >> Integer)) {
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
