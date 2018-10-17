@@ -1,12 +1,17 @@
 #include "insertionSort.h"
 #include "Output.h"
 
+
+
 // Insertion Sort class 
 std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> list)
 {
 	int  j;
 	pair<int, int> k;
 	int listsize = list.size();
+
+
+
 
 	//Creation of vector of pair used for keeping the indexes
 	vector<pair<int,int>> alt(listsize);
@@ -18,6 +23,9 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 		alt[i].second = i;
 
 	}
+
+
+
 
 	//Insertion sorting the vector 
 	for (int i = 1; i < listsize; i++)
@@ -39,6 +47,9 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 		alt[j] = k;
 	}
 
+
+
+
 	//Creation of index vector
 	vector<int> index(listsize);
 
@@ -49,6 +60,9 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 
 	}
 
+
+
+
 	//Creation of list vector
 
 	for (int i = 0; i < listsize; i++)
@@ -57,6 +71,8 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 		list[i] = alt[i].first;
 
 	}
+
+
 
 
 	//return of the two vectors 
