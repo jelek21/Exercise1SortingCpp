@@ -21,8 +21,8 @@ int main(){
 	a = Output::PrintString("The indexes vector is: ", true);
 	a = Output::PrintIntVector(indexes);
 	a = Output::PrintString("", true);
-
-	vector<int> W = QuickSort::StartSorting(V);
+	QuickSort QSort;
+	vector<int> W = QSort.StartSorting(V);
 	a = Output::PrintString("The sorted vector is: ", true);
 	a = Output::PrintIntVector(V);
 	
