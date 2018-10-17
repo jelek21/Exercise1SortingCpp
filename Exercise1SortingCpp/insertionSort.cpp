@@ -27,7 +27,7 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 		j = i;
 		k = alt[i];
 
-		while (j > 0 && k < alt[j - 1])
+		while (j > 0 && k.first < alt[j - 1].first)
 		{
 			alt[j] = alt[j - 1];
 			j--;
@@ -46,7 +46,6 @@ std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> lis
 
 
 	//Creation of list vector
-
 	for (int i = 0; i < listsize; i++)
 	{
 		list[i] = alt[i].first;
