@@ -5,11 +5,11 @@
 #include "Output.h"
 #include "insertionSort.h"
 #include "Quicksort.h"
+#include "TestPlan.h"
 
 using namespace std;
 
 int main(){
-
 	vector<int> V;
 	int a;
 	V = Input::AskIntVector();
