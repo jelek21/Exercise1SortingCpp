@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include<limits>
+
 using namespace std;
 
 class Input{
@@ -12,6 +14,11 @@ public:
 	*/
 	static vector<int> AskIntVector();
 
-private:
-	static int InputInt(int A);
+	/**
+	* Normal public method that returns an integer.
+	* It returns an integer asked to the user.
+	* @parameter void, this function does not need any input.
+	* @return int the integer input by the user integer.
+	*/
+	static int InputInt();
 };

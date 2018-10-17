@@ -13,7 +13,7 @@ public:
 	* @parameter vector<int> the vector of integer you want to print.
 	* @return  An status in (0=OK !0=NOK).
 	*/
-	static int PrintIntVector(vector<int> V);
+	int PrintIntVector(vector<int> V);
 
 	/**
 	* Normal public method that returns int (a status).
@@ -21,5 +21,13 @@ public:
 	* @parameter A String S, the string you want to print and a bool Eline (endl at the end of the print or not).
 	* @return  An status in (0=OK !0=NOK).
 	*/
-	static int PrintString(string S, bool Eline);
+	int PrintString(string S, bool Eline);
+
+	/**
+	* Normal public method that returns int (a status).
+	* It prints an integer.
+	* @parameter A String S, the string you want to print and a bool Eline (endl at the end of the print or not).
+	* @return  An status in (0=OK !0=NOK).
+	*/
+	int PrintInt(int x, bool Eline);
 };

@@ -17,3 +17,9 @@ int Output::PrintString(string S, bool Eline)
 	if (Eline) cout << endl;
 	return 0;
 }
+
+int Output::PrintInt(int x, bool Eline) {
+	cout << x;
+	if (Eline) cout << endl;
+	return 0;
+}
