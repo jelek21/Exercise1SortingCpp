@@ -1,33 +1,33 @@
 #include "Quicksort.h"
 
-void QuickSort::swap(vector<int> & V, int i, int j) {
-	int tmp = V[i];
+void QuickSort::Swapper(vector<int> & V, int i, int j) {
+	int Tmp = V[i];
 	V[i] = V[j];
-	V[j] = tmp;
+	V[j] = Tmp;
 }
 
-void QuickSort::QuickSorting(vector<int> & V, int low, int high) {
-	if (low >= high) return;
+void QuickSort::QuickSorting(vector<int> & V, int Low, int High) {
+	if (Low >= High) return;
 
-	int p = Partition(V, low, high);
+	int Partition = Partitioner(V, Low, High);
 
-	QuickSorting(V, low, p - 1);
-	QuickSorting(V, p + 1, high);
+	QuickSorting(V, Low, Partition - 1);
+	QuickSorting(V, Partition + 1, High);
 
 }
 
-int QuickSort::Partition(vector<int> & V, int low, int high) {
-	int p = low;
-	for (int i = p + 1; i <= high; ++i) {
-		if (V[i] < V[p]) {
-			swap(V, i, p);
-			if (i != p + 1) {
-				swap(V, i, p + 1);
+int QuickSort::Partitioner(vector<int> & V, int Low, int High) {
+	int Pivot = Low;
+	for (int i = Pivot + 1; i <= High; ++i) {
+		if (V[i] < V[Pivot]) {
+			Swapper(V, i, Pivot);
+			if (i != Pivot + 1) {
+				Swapper(V, i, Pivot + 1);
 			}
-			p = p + 1;
+			Pivot = Pivot + 1;
 		}
 	}
-	return p;
+	return Pivot;
 }
 
 vector<int> QuickSort::StartSorting(vector<int> V) {

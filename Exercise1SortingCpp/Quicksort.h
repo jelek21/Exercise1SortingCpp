@@ -19,7 +19,7 @@ private:
 	* @param A Vector V, an int i (the index of the first element) an int j (the index of the second element).
 	* @return  The vector with the two elements swapped.
 	*/
-	void swap(vector<int> & V, int i, int j);
+	void Swapper(vector<int> & V, int i, int j);
 
 	/**
 	* Normal private method that execute the quicksort script.
@@ -35,5 +35,5 @@ private:
 	* @param A String S, the string you want to print and a bool Eline (endl at the end of the print or not).
 	* @return  An status in (0=OK !0=NOK).
 	*/
-	int Partition(vector<int> & V, int low, int high);
+	int Partitioner(vector<int> & V, int low, int high);
 };

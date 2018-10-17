@@ -4,54 +4,54 @@
 
 
 // Insertion Sort class 
-std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> list)
+std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> List)
 {
 	int  j;
 	pair<int, int> k;
-	int listsize = list.size();
+	int Listsize = List.size();
 
 
 	//Creation of vector of pair used for keeping the indexes
-	vector<pair<int,int>> alt(listsize);
+	vector<pair<int,int>> Alt(Listsize);
 
-	for (int i = 0; i < listsize; i++)
+	for (int i = 0; i < Listsize; i++)
 	{
-		alt[i].first = list[i];
-		alt[i].second = i;
+		Alt[i].first = List[i];
+		Alt[i].second = i;
 	}
 
 
 	//Insertion sorting the vector 
-	for (int i = 1; i < listsize; i++)
+	for (int i = 1; i < Listsize; i++)
 	{
 		j = i;
-		k = alt[i];
+		k = Alt[i];
 
-		while (j > 0 && k.first < alt[j - 1].first)
+		while (j > 0 && k.first < Alt[j - 1].first)
 		{
-			alt[j] = alt[j - 1];
+			Alt[j] = Alt[j - 1];
 			j--;
 		}
-		alt[j] = k;
+		Alt[j] = k;
 	}
 
 
 	//Creation of index vector
-	vector<int> index(listsize);
+	vector<int> index(Listsize);
 
-	for (int i = 0; i < listsize; i++)
+	for (int i = 0; i < Listsize; i++)
 	{
-		index[i] = alt[i].second;
+		index[i] = Alt[i].second;
 	}
 
 
 	//Creation of list vector
-	for (int i = 0; i < listsize; i++)
+	for (int i = 0; i < Listsize; i++)
 	{
-		list[i] = alt[i].first;
+		List[i] = Alt[i].first;
 	}
 
 
 	//return of the two vectors 
-	return { list, index };
+	return { List, index };
 }
