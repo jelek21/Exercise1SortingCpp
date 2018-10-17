@@ -122,11 +122,13 @@
     <ClCompile Include="insertionSort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Output.cpp" />
+    <ClCompile Include="Quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="insertionSort.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Output.h" />
+    <ClInclude Include="Quicksort.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
