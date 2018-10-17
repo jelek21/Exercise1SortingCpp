@@ -9,23 +9,33 @@
 using namespace std;
 
 int main(){
+
 	vector<int> V;
 	int a;
 	V = Input::AskIntVector();
 	vector<int> sorted = get<0>(insertionSort::SortIntVector(V));
 	vector<int> indexes = get<1>(insertionSort::SortIntVector(V));
-	a = Output::PrintString("The vector you entered is: ", true);
-	a = Output::PrintIntVector(V);
-	a = Output::PrintString("The vector sorted by the insdertion algorithm is: ", true);
-	a = Output::PrintIntVector(sorted);
-	a = Output::PrintString("The indexes vector is: ", true);
-	a = Output::PrintIntVector(indexes);
-	a = Output::PrintString("", true);
+	Output o;
+
+
+	//Print of the vectors for Insertion Sort algorithm
+	a = o.PrintString("The vector you entered is: ", true);
+	a = o.PrintIntVector(V);
+	a = o.PrintString("The vector sorted by the insdertion algorithm is: ", true);
+	a = o.PrintIntVector(sorted);
+	a = o.PrintString("The indexes vector is: ", true);
+	a = o.PrintIntVector(indexes);
+	a = o.PrintString("", true);
+
+
+	//Print of the vector for Quick Sort algorithm
 	QuickSort QSort;
 	vector<int> W = QSort.StartSorting(V);
-	a = Output::PrintString("The vector sorted by the Quicksort algorithm is : ", true);
-	a = Output::PrintIntVector(W);
+	a = o.PrintString("The vector sorted by the Quicksort algorithm is : ", true);
+	a = o.PrintIntVector(W);
 	
-	a = Output::PrintString("Please type any key to end", true);
+
+	//End 
+	a = o.PrintString("Please type any key to end", true);
 	cin >> a;
 }
