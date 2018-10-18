@@ -22,3 +22,10 @@ int TestPlan::RandomInt(int RandomRatio,int Length, bool Negatives) {
 		else return A;
 	}
 }
+
+bool TestPlan::IsSorted(vector<int> V) {
+	for (int i = 1; i < V.size(); i++) {
+		if (V[i - 1] > V[i]) return false;
+	}
+	return true;
+}

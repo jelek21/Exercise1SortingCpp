@@ -14,6 +14,8 @@ public:
 	*/
 	vector<int> VectorCreator(int Length, int RandomRatio, bool Negatives);
 
+	bool IsSorted(vector<int> V);
+
 private:
 	/**
 	*
@@ -24,4 +26,5 @@ private:
 	int RandomInt(int RandomRatio, int Length, bool Negatives);
 
 };
+
 

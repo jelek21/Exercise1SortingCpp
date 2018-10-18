@@ -10,21 +10,27 @@
 using namespace std;
 
 int main(){
+	TestPlan Test;
 	vector<int> V;
 	int a;
 	V = Input::AskIntVector();
-	vector<int> sorted = get<0>(insertionSort::SortIntVector(V));
-	vector<int> indexes = get<1>(insertionSort::SortIntVector(V));
+	vector<int> Sorted = get<0>(insertionSort::SortIntVector(V));
+	vector<int> Indexes = get<1>(insertionSort::SortIntVector(V));
 	Output o;
 
+	if (Test.IsSorted(V)) cout << "True" << endl << endl;
+	else cout << "False" << endl << endl;
+	
+	if (Test.IsSorted(Sorted)) cout << "True" << endl << endl;
+	else cout << "False" << endl << endl;
 
 	//Print of the vectors for Insertion Sort algorithm
 	a = o.PrintString("The vector you entered is: ", true);
 	a = o.PrintIntVector(V);
 	a = o.PrintString("The vector sorted by the insdertion algorithm is: ", true);
-	a = o.PrintIntVector(sorted);
+	a = o.PrintIntVector(Sorted);
 	a = o.PrintString("The indexes vector is: ", true);
-	a = o.PrintIntVector(indexes);
+	a = o.PrintIntVector(Indexes);
 	a = o.PrintString("", true);
 
 
