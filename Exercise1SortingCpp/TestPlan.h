@@ -1,6 +1,7 @@
 #include <vector>
 #include <chrono>
 #include <iostream>
+#include <fstream>
 
 
 
@@ -24,6 +25,13 @@ public:
 	*/
 	vector<int> TestLauncher();
 
+	/**
+	* Simple public method that test performances on many different vectors
+	* @param void, everything is defined inside the method
+	* @return void, it creates a file with results, the file is gnuplot ready.
+	*/
+	void UltimeTest();
+
 private:
 	/**
 	* Simple private function that will generate a random int with the parameters inputed:
@@ -42,6 +50,22 @@ private:
 	* @return Vector<int> the vector randomly generated with the above parameters.
 	*/
 	vector<int> VectorCreator(int Length, int RandomRatio, bool Negatives);
+
+	/**
+	* Simple private method that compute the performance test automatically on Quicksort
+	* it returns the time result
+	* @param Length (int) : the length of the vector.
+	* @return double: the time spend to sort.
+	*/
+	double PerformanceQSTest(int Length, int Ratio, bool Neg);
+
+	/**
+	* Simple private method that compute the performance test automatically on Insertion Sort
+	* it returns the time result
+	* @param Length (int) : the length of the vector.
+	* @return double: the time spend to sort.
+	*/
+	double PerformanceISTest(int Length, int Ratio, bool Neg);
 };
 
 
