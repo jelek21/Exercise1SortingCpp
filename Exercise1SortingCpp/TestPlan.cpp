@@ -54,25 +54,28 @@ vector<int> TestPlan::TestLauncher()
 void TestPlan::UltimeTest()
 {
 	Output O;
-	O.ResultWrite("QS_Results.dat", 1 ,PerformanceQSTest(1, 1, 1));
-	O.ResultWrite("QS_Results.dat", 5, PerformanceQSTest(5, 1, 1));
-	O.ResultWrite("QS_Results.dat", 10, PerformanceQSTest(10, 1, 1));
-	O.ResultWrite("QS_Results.dat", 50, PerformanceQSTest(50, 1, 1));
-	O.ResultWrite("QS_Results.dat", 100, PerformanceQSTest(100, 1, 1));
-	O.ResultWrite("QS_Results.dat", 500, PerformanceQSTest(500, 1, 1));
-	O.ResultWrite("QS_Results.dat", 1000, PerformanceQSTest(1000, 1, 1));
-	//O.ResultWrite("QS_Results.dat", 5000, PerformanceQSTest(5000, 1, 1));
-	//O.ResultWrite("QS_Results.dat", 10000, PerformanceQSTest(10000, 1, 1));
+	O.PrintString("Your result files are in creation", true);
+	string QS = "QS_Results.dat";
+	string IS = "IS_Results.dat";
+	O.ResultWrite(QS, 1 ,PerformanceQSTest(1, 1, 1));
+	O.ResultWrite(QS, 5, PerformanceQSTest(5, 1, 1));
+	O.ResultWrite(QS, 10, PerformanceQSTest(10, 1, 1));
+	O.ResultWrite(QS, 50, PerformanceQSTest(50, 1, 1));
+	O.ResultWrite(QS, 100, PerformanceQSTest(100, 1, 1));
+	O.ResultWrite(QS, 500, PerformanceQSTest(500, 1, 1));
+	O.ResultWrite(QS, 1000, PerformanceQSTest(1000, 1, 1));
+	O.ResultWrite(QS, 5000, PerformanceQSTest(5000, 1, 1));
+	//O.ResultWrite(QS, 10000, PerformanceQSTest(10000, 1, 1));
 
-	O.ResultWrite("IS_Results.dat", 1, PerformanceISTest(1, 1, 1));
-	O.ResultWrite("IS_Results.dat", 5, PerformanceISTest(5, 1, 1));
-	O.ResultWrite("IS_Results.dat", 10, PerformanceISTest(10, 1, 1));
-	O.ResultWrite("IS_Results.dat", 50, PerformanceISTest(50, 1, 1));
-	O.ResultWrite("IS_Results.dat", 100, PerformanceISTest(100, 1, 1));
-	O.ResultWrite("IS_Results.dat", 500, PerformanceISTest(500, 1, 1));
-	O.ResultWrite("IS_Results.dat", 1000, PerformanceISTest(1000, 1, 1));
-	//O.ResultWrite("IS_Results.dat", 5000, PerformanceISTest(5000, 1, 1));
-	//O.ResultWrite("IS_Results.dat", 10000, PerformanceISTest(10000, 1, 1));
+	O.ResultWrite(IS, 1, PerformanceISTest(1, 1, 1));
+	O.ResultWrite(IS, 5, PerformanceISTest(5, 1, 1));
+	O.ResultWrite(IS, 10, PerformanceISTest(10, 1, 1));
+	O.ResultWrite(IS, 50, PerformanceISTest(50, 1, 1));
+	O.ResultWrite(IS, 100, PerformanceISTest(100, 1, 1));
+	O.ResultWrite(IS, 500, PerformanceISTest(500, 1, 1));
+	O.ResultWrite(IS, 1000, PerformanceISTest(1000, 1, 1));
+	O.ResultWrite(IS, 5000, PerformanceISTest(5000, 1, 1));
+	//O.ResultWrite(IS, 10000, PerformanceISTest(10000, 1, 1));
 }
 
 double TestPlan::PerformanceQSTest(int Length, int Ratio, bool Neg) {

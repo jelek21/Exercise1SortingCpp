@@ -50,8 +50,10 @@ int Output::PrintDurationResult(double Duration, int Type)
 }
 
 int Output::ResultWrite(string file, int X, double Time) {
-	fstream f;
-	f.open(file);
+	ofstream f(file);
+	if (!f.is_open()) {
+		f.open(file);
+	}
 	f << X << "    ";
 	f << Time << endl;
 	f.close();
