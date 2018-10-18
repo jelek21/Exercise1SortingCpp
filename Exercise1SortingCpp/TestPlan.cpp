@@ -55,8 +55,8 @@ void TestPlan::UltimeTest()
 {
 	Output O;
 	O.PrintString("Your result files are in creation", true);
-	string QS = "QS_Results.dat";
-	string IS = "IS_Results.dat";
+	string QS = "..\\QS_Results.dat";
+	string IS = "..\\IS_Results.dat";
 	O.ResultWrite(QS, 1 ,PerformanceQSTest(1, 1, 1));
 	O.ResultWrite(QS, 5, PerformanceQSTest(5, 1, 1));
 	O.ResultWrite(QS, 10, PerformanceQSTest(10, 1, 1));
