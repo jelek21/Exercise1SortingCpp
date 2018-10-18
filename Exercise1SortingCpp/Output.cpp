@@ -1,10 +1,8 @@
 #include "Output.h"
 
-
 int Output::PrintIntVector(vector<int> V)
 {
-	int Vsize = V.size();
-	for (int i = 0; i < Vsize; i++) {
+	for (unsigned __int64 i = 0; i < V.size(); i++) {
 		cout << V[i] << "    ";
 	}
 	cout << endl;

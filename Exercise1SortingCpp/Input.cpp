@@ -32,5 +32,20 @@ int Input::InputInt() {
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		O.PrintString("Invalid input.  Try again: ", true);
 	}
+	O.PrintString("", true);
 	return Integer;
+}
+
+int Input::Startup()
+{
+	int A = 0;
+	O.PrintString("What do you want to do ?", true);
+	O.PrintString("1 : Sort an input", true);
+	O.PrintString("2 : Test the two sorting algorithms", true);
+	O.PrintString("", true);
+	while ((A != 1) && (A != 2)) {
+		O.PrintString("Please enter 1 or 2", true);
+		A = InputInt();
+	}
+	return A;
 }
