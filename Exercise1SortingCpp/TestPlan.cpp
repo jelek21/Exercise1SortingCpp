@@ -14,14 +14,17 @@ vector<int> TestPlan::VectorCreator(int Length, int RandomRatio, bool Negatives)
 
 int TestPlan::RandomInt(int RandomRatio,int Length, bool Negatives) {
 	int A;
-	int B; 
+	int B;
+	if (2 * RandomRatio > Length) RandomRatio = 1;
 	if (!Negatives) {
-		A = rand() % ((Length + 1)/RandomRatio);
+		A = rand()%((int)floor((Length + 1)/RandomRatio));
 		return A;
 	}
 	else {
-		A = rand() % ((Length + 1) / (2*RandomRatio));
-		B = rand() % 2;
+		RandomRatio = 2 * RandomRatio;
+		int P = (Length + 1) / RandomRatio;
+		A = (int)floor(rand() % P);
+		B = rand()%2;
 		if (B > 0) return -A;
 		else return A;
 	}
@@ -57,32 +60,38 @@ void TestPlan::UltimeTest()
 	O.PrintString("Your result files are in creation", true);
 	string QS = "..\\QS_Results.dat";
 	string IS = "..\\IS_Results.dat";
-	O.ResultWrite(QS, 1 ,PerformanceQSTest(1, 1, 1));
-	O.ResultWrite(QS, 5, PerformanceQSTest(5, 1, 1));
-	O.ResultWrite(QS, 10, PerformanceQSTest(10, 1, 1));
-	O.ResultWrite(QS, 50, PerformanceQSTest(50, 1, 1));
-	O.ResultWrite(QS, 100, PerformanceQSTest(100, 1, 1));
-	O.ResultWrite(QS, 500, PerformanceQSTest(500, 1, 1));
-	O.ResultWrite(QS, 1000, PerformanceQSTest(1000, 1, 1));
-	O.ResultWrite(QS, 5000, PerformanceQSTest(5000, 1, 1));
-	O.ResultWrite(QS, 10000, PerformanceQSTest(10000, 1, 1));
+	int Ratio = 3;
+	bool Neg = true;
+	O.ResultWrite(QS, 2 ,PerformanceQSTest(2, Ratio, Neg));
+	O.ResultWrite(QS, 5, PerformanceQSTest(5, Ratio, Neg));
+	O.ResultWrite(QS, 10, PerformanceQSTest(10, Ratio, Neg));
+	O.ResultWrite(QS, 50, PerformanceQSTest(50, Ratio, Neg));
+	O.ResultWrite(QS, 100, PerformanceQSTest(100, Ratio, Neg));
+	O.ResultWrite(QS, 500, PerformanceQSTest(500, Ratio, Neg));
+	O.ResultWrite(QS, 1000, PerformanceQSTest(1000, Ratio, Neg));
+	O.ResultWrite(QS, 5000, PerformanceQSTest(5000, Ratio, Neg));
+	O.ResultWrite(QS, 10000, PerformanceQSTest(10000, Ratio, Neg));
+	
 
-	O.ResultWrite(IS, 1, PerformanceISTest(1, 1, 1));
-	O.ResultWrite(IS, 5, PerformanceISTest(5, 1, 1));
-	O.ResultWrite(IS, 10, PerformanceISTest(10, 1, 1));
-	O.ResultWrite(IS, 50, PerformanceISTest(50, 1, 1));
-	O.ResultWrite(IS, 100, PerformanceISTest(100, 1, 1));
-	O.ResultWrite(IS, 500, PerformanceISTest(500, 1, 1));
-	O.ResultWrite(IS, 1000, PerformanceISTest(1000, 1, 1));
-	O.ResultWrite(IS, 5000, PerformanceISTest(5000, 1, 1));
-	O.ResultWrite(IS, 10000, PerformanceISTest(10000, 1, 1));
+	O.ResultWrite(IS, 2, PerformanceISTest(2, Ratio, Neg));
+	O.ResultWrite(IS, 5, PerformanceISTest(5, Ratio, Neg));
+	O.ResultWrite(IS, 10, PerformanceISTest(10, Ratio, Neg));
+	O.ResultWrite(IS, 50, PerformanceISTest(50, Ratio, Neg));
+	O.ResultWrite(IS, 100, PerformanceISTest(100, Ratio, Neg));
+	O.ResultWrite(IS, 500, PerformanceISTest(500, Ratio, Neg));
+	O.ResultWrite(IS, 1000, PerformanceISTest(1000, Ratio, Neg));
+	O.ResultWrite(IS, 5000, PerformanceISTest(5000, Ratio, Neg));
+	O.ResultWrite(IS, 10000, PerformanceISTest(10000, Ratio, Neg));
+	O.ResultWrite(IS, 100000, PerformanceISTest(100000, Ratio, Neg));
 }
 
 double TestPlan::PerformanceQSTest(int Length, int Ratio, bool Neg) {
+	Output O;
 	vector<int> V;
 	chrono::steady_clock::time_point tIS1 = chrono::steady_clock::now();
 	chrono::steady_clock::time_point tIS2 = chrono::steady_clock::now();
 	V = VectorCreator(Length, Ratio, Neg);
+	O.PrintIntVector(V);
 	tIS1 = chrono::steady_clock::now();
 	vector<int> Sorted = get<0>(insertionSort::SortIntVector(V));
 	tIS2 = chrono::steady_clock::now();
