@@ -91,7 +91,6 @@ double TestPlan::PerformanceQSTest(int Length, int Ratio, bool Neg) {
 	chrono::steady_clock::time_point tIS1 = chrono::steady_clock::now();
 	chrono::steady_clock::time_point tIS2 = chrono::steady_clock::now();
 	V = VectorCreator(Length, Ratio, Neg);
-	O.PrintIntVector(V);
 	tIS1 = chrono::steady_clock::now();
 	vector<int> Sorted = get<0>(insertionSort::SortIntVector(V));
 	tIS2 = chrono::steady_clock::now();
