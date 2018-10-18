@@ -42,7 +42,7 @@ int Input::Startup()
 	O.PrintString("What do you want to do ?", true);
 	O.PrintString("1 : Sort an input", true);
 	O.PrintString("2 : Test the two sorting algorithms", true);
-	O.PrintString("2 : Ultime test", true);
+	O.PrintString("3 : Ultime test", true);
 	O.PrintString("", true);
 	while ((A != 1) && (A != 2) && (A!=3)) {
 		O.PrintString("Please enter 1, 2 or 3", true);

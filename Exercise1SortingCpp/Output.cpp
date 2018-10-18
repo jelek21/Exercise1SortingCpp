@@ -50,10 +50,8 @@ int Output::PrintDurationResult(double Duration, int Type)
 }
 
 int Output::ResultWrite(string file, int X, double Time) {
-	ofstream f(file);
-	if (!f.is_open()) {
-		f.open(file);
-	}
+	ofstream f;
+	f.open(file, std::ios_base::app);
 	f << X << "    ";
 	f << Time << endl;
 	f.close();

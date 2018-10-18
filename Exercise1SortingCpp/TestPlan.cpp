@@ -65,7 +65,7 @@ void TestPlan::UltimeTest()
 	O.ResultWrite(QS, 500, PerformanceQSTest(500, 1, 1));
 	O.ResultWrite(QS, 1000, PerformanceQSTest(1000, 1, 1));
 	O.ResultWrite(QS, 5000, PerformanceQSTest(5000, 1, 1));
-	//O.ResultWrite(QS, 10000, PerformanceQSTest(10000, 1, 1));
+	O.ResultWrite(QS, 10000, PerformanceQSTest(10000, 1, 1));
 
 	O.ResultWrite(IS, 1, PerformanceISTest(1, 1, 1));
 	O.ResultWrite(IS, 5, PerformanceISTest(5, 1, 1));
@@ -75,7 +75,7 @@ void TestPlan::UltimeTest()
 	O.ResultWrite(IS, 500, PerformanceISTest(500, 1, 1));
 	O.ResultWrite(IS, 1000, PerformanceISTest(1000, 1, 1));
 	O.ResultWrite(IS, 5000, PerformanceISTest(5000, 1, 1));
-	//O.ResultWrite(IS, 10000, PerformanceISTest(10000, 1, 1));
+	O.ResultWrite(IS, 10000, PerformanceISTest(10000, 1, 1));
 }
 
 double TestPlan::PerformanceQSTest(int Length, int Ratio, bool Neg) {
