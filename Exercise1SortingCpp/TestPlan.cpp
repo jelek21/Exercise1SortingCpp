@@ -83,6 +83,7 @@ void TestPlan::UltimeTest()
 	O.ResultWrite(IS, 5000, PerformanceISTest(5000, Ratio, Neg));
 	O.ResultWrite(IS, 10000, PerformanceISTest(10000, Ratio, Neg));
 	O.ResultWrite(IS, 100000, PerformanceISTest(100000, Ratio, Neg));
+	O.ResultWrite(IS, 1000000, PerformanceISTest(1000000, Ratio, Neg));
 }
 
 double TestPlan::PerformanceQSTest(int Length, int Ratio, bool Neg) {
