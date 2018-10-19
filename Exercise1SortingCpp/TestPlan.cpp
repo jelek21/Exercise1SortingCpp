@@ -58,32 +58,31 @@ void TestPlan::UltimeTest()
 {
 	Output O;
 	O.PrintString("Your result files are in creation", true);
-	string QS = "..\\QS_Results.dat";
-	string IS = "..\\IS_Results.dat";
+	string OF = "..\\Results.dat";
 	int Ratio = 3;
 	bool Neg = true;
 
-	O.ResultWrite(IS, 2, PerformanceTest(2, Ratio, Neg));
-	O.ResultWrite(IS, 5, PerformanceTest(5, Ratio, Neg));
-	O.ResultWrite(IS, 10, PerformanceTest(10, Ratio, Neg));
-	O.ResultWrite(IS, 50, PerformanceTest(50, Ratio, Neg));
-	O.ResultWrite(IS, 100, PerformanceTest(100, Ratio, Neg));
-	O.ResultWrite(IS, 250, PerformanceTest(250, Ratio, Neg));
-	O.ResultWrite(IS, 500, PerformanceTest(500, Ratio, Neg));
-	O.ResultWrite(IS, 1000, PerformanceTest(1000, Ratio, Neg));
-	O.ResultWrite(IS, 2500, PerformanceTest(2500, Ratio, Neg));
-	O.ResultWrite(IS, 5000, PerformanceTest(5000, Ratio, Neg));
-	O.ResultWrite(IS, 10000, PerformanceTest(10000, Ratio, Neg));
-	O.ResultWrite(IS, 25000, PerformanceTest(25000, Ratio, Neg));
-	//O.ResultWrite(IS, 100000, PerformanceTest(100000, Ratio, Neg));
-	//O.ResultWrite(IS, 1000000, PerformanceTest(1000000, Ratio, Neg));
+	O.ResultWrite(OF, 2, PerformanceTest(2, Ratio, Neg));
+	O.ResultWrite(OF, 5, PerformanceTest(5, Ratio, Neg));
+	O.ResultWrite(OF, 10, PerformanceTest(10, Ratio, Neg));
+	O.ResultWrite(OF, 50, PerformanceTest(50, Ratio, Neg));
+	O.ResultWrite(OF, 100, PerformanceTest(100, Ratio, Neg));
+	O.ResultWrite(OF, 250, PerformanceTest(250, Ratio, Neg));
+	O.ResultWrite(OF, 500, PerformanceTest(500, Ratio, Neg));
+	O.ResultWrite(OF, 1000, PerformanceTest(1000, Ratio, Neg));
+	O.ResultWrite(OF, 2500, PerformanceTest(2500, Ratio, Neg));
+	O.ResultWrite(OF, 5000, PerformanceTest(5000, Ratio, Neg));
+	O.ResultWrite(OF, 10000, PerformanceTest(10000, Ratio, Neg));
+	O.ResultWrite(OF, 25000, PerformanceTest(25000, Ratio, Neg));
+	//O.ResultWrite(OF, 100000, PerformanceTest(100000, Ratio, Neg));
+	//O.ResultWrite(OF, 1000000, PerformanceTest(1000000, Ratio, Neg));
 }
 
-double* TestPlan::PerformanceTest(int Length, int Ratio, bool Neg) {
+vector<double> TestPlan::PerformanceTest(int Length, int Ratio, bool Neg) {
 	Output O;
 	QuickSort QSort;
 	vector<int> V;
-	double Ret[2];
+	vector<double> Ret(2);
 	chrono::steady_clock::time_point tIS1 = chrono::steady_clock::now();
 	chrono::steady_clock::time_point tIS2 = chrono::steady_clock::now();
 	chrono::steady_clock::time_point tQS1 = chrono::steady_clock::now();

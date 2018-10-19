@@ -51,5 +51,5 @@ public:
 
 	int PrintDurationResult(double Duration, int Type);
 
-	int ResultWrite(string file, int X, double Time[]);
+	int ResultWrite(string file, int X, vector<double> Time);
 };

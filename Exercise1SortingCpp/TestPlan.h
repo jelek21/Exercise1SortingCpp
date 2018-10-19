@@ -57,7 +57,7 @@ private:
 	* @param Length (int) : the length of the vector.
 	* @return double: the time spend to sort.
 	*/
-	double* PerformanceTest(int Length, int Ratio, bool Neg);
+	vector<double> PerformanceTest(int Length, int Ratio, bool Neg);
 
 };
 

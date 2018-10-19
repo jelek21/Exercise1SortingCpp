@@ -49,7 +49,7 @@ int Output::PrintDurationResult(double Duration, int Type)
 	return 0;
 }
 
-int Output::ResultWrite(string file, int X, double Time[]) {
+int Output::ResultWrite(string file, int X, vector<double> Time) {
 	ofstream f;
 	f.open(file, std::ios_base::app);
 	f << X << "    " << Time[0] << "    " << Time[1] << endl;
