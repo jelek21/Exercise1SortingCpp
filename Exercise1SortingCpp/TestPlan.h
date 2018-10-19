@@ -52,20 +52,13 @@ private:
 	vector<int> VectorCreator(int Length, int RandomRatio, bool Negatives);
 
 	/**
-	* Simple private method that compute the performance test automatically on Quicksort
+	* Simple private method that compute the performance test automatically on  and Insertion Sort
 	* it returns the time result
 	* @param Length (int) : the length of the vector.
 	* @return double: the time spend to sort.
 	*/
-	double PerformanceQSTest(int Length, int Ratio, bool Neg);
+	double* PerformanceTest(int Length, int Ratio, bool Neg);
 
-	/**
-	* Simple private method that compute the performance test automatically on Insertion Sort
-	* it returns the time result
-	* @param Length (int) : the length of the vector.
-	* @return double: the time spend to sort.
-	*/
-	double PerformanceISTest(int Length, int Ratio, bool Neg);
 };
 
 

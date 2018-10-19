@@ -62,52 +62,67 @@ void TestPlan::UltimeTest()
 	string IS = "..\\IS_Results.dat";
 	int Ratio = 3;
 	bool Neg = true;
-	O.ResultWrite(QS, 2 ,PerformanceQSTest(2, Ratio, Neg));
-	O.ResultWrite(QS, 5, PerformanceQSTest(5, Ratio, Neg));
-	O.ResultWrite(QS, 10, PerformanceQSTest(10, Ratio, Neg));
-	O.ResultWrite(QS, 50, PerformanceQSTest(50, Ratio, Neg));
-	O.ResultWrite(QS, 100, PerformanceQSTest(100, Ratio, Neg));
-	O.ResultWrite(QS, 500, PerformanceQSTest(500, Ratio, Neg));
-	O.ResultWrite(QS, 1000, PerformanceQSTest(1000, Ratio, Neg));
-	O.ResultWrite(QS, 5000, PerformanceQSTest(5000, Ratio, Neg));
-	O.ResultWrite(QS, 10000, PerformanceQSTest(10000, Ratio, Neg));
-	
 
-	O.ResultWrite(IS, 2, PerformanceISTest(2, Ratio, Neg));
-	O.ResultWrite(IS, 5, PerformanceISTest(5, Ratio, Neg));
-	O.ResultWrite(IS, 10, PerformanceISTest(10, Ratio, Neg));
-	O.ResultWrite(IS, 50, PerformanceISTest(50, Ratio, Neg));
-	O.ResultWrite(IS, 100, PerformanceISTest(100, Ratio, Neg));
-	O.ResultWrite(IS, 500, PerformanceISTest(500, Ratio, Neg));
-	O.ResultWrite(IS, 1000, PerformanceISTest(1000, Ratio, Neg));
-	O.ResultWrite(IS, 5000, PerformanceISTest(5000, Ratio, Neg));
-	O.ResultWrite(IS, 10000, PerformanceISTest(10000, Ratio, Neg));
-	O.ResultWrite(IS, 100000, PerformanceISTest(100000, Ratio, Neg));
-	O.ResultWrite(IS, 1000000, PerformanceISTest(1000000, Ratio, Neg));
+	O.ResultWrite(IS, 2, PerformanceTest(2, Ratio, Neg));
+	O.ResultWrite(IS, 5, PerformanceTest(5, Ratio, Neg));
+	O.ResultWrite(IS, 10, PerformanceTest(10, Ratio, Neg));
+	O.ResultWrite(IS, 50, PerformanceTest(50, Ratio, Neg));
+	O.ResultWrite(IS, 100, PerformanceTest(100, Ratio, Neg));
+	O.ResultWrite(IS, 250, PerformanceTest(250, Ratio, Neg));
+	O.ResultWrite(IS, 500, PerformanceTest(500, Ratio, Neg));
+	O.ResultWrite(IS, 1000, PerformanceTest(1000, Ratio, Neg));
+	O.ResultWrite(IS, 2500, PerformanceTest(2500, Ratio, Neg));
+	O.ResultWrite(IS, 5000, PerformanceTest(5000, Ratio, Neg));
+	O.ResultWrite(IS, 10000, PerformanceTest(10000, Ratio, Neg));
+	O.ResultWrite(IS, 25000, PerformanceTest(25000, Ratio, Neg));
+	//O.ResultWrite(IS, 100000, PerformanceTest(100000, Ratio, Neg));
+	//O.ResultWrite(IS, 1000000, PerformanceTest(1000000, Ratio, Neg));
 }
 
-double TestPlan::PerformanceQSTest(int Length, int Ratio, bool Neg) {
+double* TestPlan::PerformanceTest(int Length, int Ratio, bool Neg) {
 	Output O;
-	vector<int> V;
-	chrono::steady_clock::time_point tIS1 = chrono::steady_clock::now();
-	chrono::steady_clock::time_point tIS2 = chrono::steady_clock::now();
-	V = VectorCreator(Length, Ratio, Neg);
-	tIS1 = chrono::steady_clock::now();
-	vector<int> Sorted = get<0>(insertionSort::SortIntVector(V));
-	tIS2 = chrono::steady_clock::now();
-	chrono::duration<double> TimeSpanIS = chrono::duration_cast<chrono::duration<double>>(tIS2 - tIS1);
-	return TimeSpanIS.count();
-}
-
-double TestPlan::PerformanceISTest(int Length, int Ratio, bool Neg) {
 	QuickSort QSort;
 	vector<int> V;
+	double Ret[2];
+	chrono::steady_clock::time_point tIS1 = chrono::steady_clock::now();
+	chrono::steady_clock::time_point tIS2 = chrono::steady_clock::now();
 	chrono::steady_clock::time_point tQS1 = chrono::steady_clock::now();
 	chrono::steady_clock::time_point tQS2 = chrono::steady_clock::now();
+	
 	V = VectorCreator(Length, Ratio, Neg);
+	
+	tIS1 = chrono::steady_clock::now();
+	vector<int> ISorted = get<0>(insertionSort::SortIntVector(V));
+	tIS2 = chrono::steady_clock::now();
+	chrono::duration<double> TimeSpanIS = chrono::duration_cast<chrono::duration<double>>(tIS2 - tIS1);
+	Ret[0] = TimeSpanIS.count();
+	if (IsSorted(ISorted)) {
+		O.PrintString("Insertion sort successed on a vector ", false);
+		O.PrintInt(Length, true);
+		O.PrintString("", true);
+	}
+	else {
+		O.PrintString("Insertion sort Failed on a vector ", false);
+		O.PrintInt(Length, true);
+		O.PrintString("", true);
+	}
+	
 	tQS1 = chrono::steady_clock::now();
-	vector<int> Sorted = QSort.StartSorting(V);
+	vector<int> QSorted = QSort.StartSorting(V);
 	tQS2 = chrono::steady_clock::now();
 	chrono::duration<double> TimeSpanQS = chrono::duration_cast<chrono::duration<double>>(tQS2 - tQS1);
-	return TimeSpanQS.count();
+	Ret[1] = TimeSpanQS.count();
+	if (IsSorted(QSorted)) {
+		O.PrintString("Quicksort successed on a vector ", false);
+		O.PrintInt(Length, true);
+		O.PrintString("", true);
+	} else {
+		O.PrintString("Quicksort Failed on a vector ", false);
+		O.PrintInt(Length, true);
+		O.PrintString("", true);
+	}
+	V.~vector<int>();
+	ISorted.~vector<int>();
+	QSorted.~vector<int>();
+	return Ret;
 }
