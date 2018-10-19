@@ -3,6 +3,7 @@
 #include "Input.h"
 #include "insertionSort.h"
 #include "Quicksort.h"
+#include "Output.h"
 
 vector<int> TestPlan::VectorCreator(int Length, int RandomRatio, bool Negatives) {
 	vector<int> V(Length);
@@ -74,8 +75,9 @@ void TestPlan::UltimeTest()
 	O.ResultWrite(OF, 5000, PerformanceTest(5000, Ratio, Neg));
 	O.ResultWrite(OF, 10000, PerformanceTest(10000, Ratio, Neg));
 	O.ResultWrite(OF, 25000, PerformanceTest(25000, Ratio, Neg));
-	//O.ResultWrite(OF, 100000, PerformanceTest(100000, Ratio, Neg));
-	//O.ResultWrite(OF, 1000000, PerformanceTest(1000000, Ratio, Neg));
+	O.ResultWrite(OF, 50000, PerformanceTest(50000, Ratio, Neg));
+	O.ResultWrite(OF, 100000, PerformanceTest(100000, Ratio, Neg));
+	O.ResultWrite(OF, 1000000, PerformanceTest(1000000, Ratio, Neg));
 }
 
 vector<double> TestPlan::PerformanceTest(int Length, int Ratio, bool Neg) {
@@ -105,6 +107,7 @@ vector<double> TestPlan::PerformanceTest(int Length, int Ratio, bool Neg) {
 		O.PrintInt(Length, true);
 		O.PrintString("", true);
 	}
+	Ret[1] = 0;
 	
 	tQS1 = chrono::steady_clock::now();
 	vector<int> QSorted = QSort.StartSorting(V);
@@ -120,6 +123,7 @@ vector<double> TestPlan::PerformanceTest(int Length, int Ratio, bool Neg) {
 		O.PrintInt(Length, true);
 		O.PrintString("", true);
 	}
+	
 	V.~vector<int>();
 	ISorted.~vector<int>();
 	QSorted.~vector<int>();

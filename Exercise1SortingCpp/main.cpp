@@ -1,3 +1,5 @@
+#ifndef _DIAGRAMS_main_H
+#define _DIAGRAMS_main_H
 #include <iostream>
 #include <vector>
 #include <chrono>
@@ -67,3 +69,4 @@ int main(){
 	cin >> b;
 	return a;
 }
+#endif

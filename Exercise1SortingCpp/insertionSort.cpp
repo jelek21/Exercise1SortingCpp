@@ -1,7 +1,4 @@
 #include "insertionSort.h"
-#include "Output.h"
-
-
 
 // Insertion Sort class 
 std::pair<vector<int>, vector<int>> insertionSort::SortIntVector(vector<int> List)

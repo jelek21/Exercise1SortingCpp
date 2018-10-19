@@ -1,5 +1,9 @@
+#ifndef _DIAGRAMS_Quicksort_H
+#define _DIAGRAMS_Quicksort_H
 #include <iostream>
 #include <vector>
+#include "Output.h"
+
 using namespace std;
 
 class QuickSort {
@@ -37,3 +41,4 @@ private:
 	*/
 	int Partitioner(vector<int> & V, int low, int high);
 };
+#endif

@@ -1,9 +1,14 @@
+#ifndef _DIAGRAMS_Output_H
+#define _DIAGRAMS_Output_H
 #include <vector>
 #include <chrono>
 #include <iostream>
 #include <fstream>
 #include <math.h>
-
+#include "Output.h"
+#include "Input.h"
+#include "insertionSort.h"
+#include "Quicksort.h"
 
 using namespace std;
 
@@ -60,5 +65,4 @@ private:
 	vector<double> PerformanceTest(int Length, int Ratio, bool Neg);
 
 };
-
-
+#endif

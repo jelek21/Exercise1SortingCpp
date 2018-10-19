@@ -1,12 +1,11 @@
+#ifndef _DIAGRAMS_Input_H
+#define _DIAGRAMS_Input_H
+#include "Output.h"
 #include <iostream>
 #include <vector>
 #include<limits>
-
-
-
 using namespace std;
-
-class Input{
+class Input {
 public:
 	/**
 	* Normal public method that returns a vector of integers.
@@ -31,5 +30,5 @@ public:
 	* @return int the integer input by the user (Forced to 1 for sorting an input or 2 for test.
 	*/
 	int Startup();
-
 };
+#endif
